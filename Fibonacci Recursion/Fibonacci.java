@@ -1,14 +1,17 @@
 class Fibonacci {
 
-  static void recursiveFibonacci(int lower, int higher) {
-    if (lower + higher >= 100) { return; }
+  static int recursiveFibonacci(int n) {
+    if (n == 0)
+      return 0;
+    else if (n == 1)
+      return 1;
 
-    System.out.println(lower + higher);
-    recursiveFibonacci(higher, lower + higher);
+    return recursiveFibonacci(n - 1) + recursiveFibonacci(n - 2);
   }
 
   public static void main(String args[]) {
-      System.out.println("0" + "\n1");
-      recursiveFibonacci(0,1);
+    for (int i = 0; i < 12; i++) {
+      System.out.println(recursiveFibonacci(i));
+    }
   }
 }
